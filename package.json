@@ -9,7 +9,7 @@
   "template": "null",
   "repository": {
     "type": "git",
-    "url": "http://github.com/simplethemes/smpl.git"
+    "url": "https://github.com/simplethemes/neat-starter.git"
   },
   "devDependencies": {
     "grunt": "0.4.1",
