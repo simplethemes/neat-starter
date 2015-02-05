@@ -1,0 +1,81 @@
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+body {
+    background-color: #fff;
+    margin:0;
+    padding:0;
+}
+
+/* @group Header */
+
+#header {
+    background-color: #000;
+    @include pad(10px default);
+    h1#logo {
+        margin: 0;
+        padding: 0;
+        line-height: 100%;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+
+
+/* @end */
+
+/* @group structure */
+
+.container {
+    @include outer-container;
+    .fullwidth {
+        @include span-columns(16);
+        @include pad(default);
+    }
+    .leftcol {
+        @include span-columns(5);
+        @include pad(default);
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+    }
+    .maincol {
+        @include span-columns(11);
+        @include pad(default);
+        @include media($tablet) {
+            @include span-columns(8);
+        }
+    }
+
+}
+
+
+
+/* @end */
+
+/* @group Typography */
+h1 {
+  font-size: $h1-font-size;
+}
+h2 {
+  font-size: $h2-font-size;
+}
+h3 {
+  font-size: $h3-font-size;
+}
+h4 {
+  font-size: $h4-font-size;
+}
+h5 {
+  font-size: $h5-font-size;
+}
+h6 {
+  font-size: $h6-font-size;
+}
+
+/* @end */
+
