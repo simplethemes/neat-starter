@@ -61,19 +61,6 @@ module.exports = function (grunt) {
     concat: {
       dev: {
         src: [
-        './js/modernizr.custom.js',
-        './js/jquery.easing.min.js',
-        //'./js/jquery.backstretch.min.js',
-        //'./js/skrollr.min.js',
-        './js/masterslider.js',
-        './js/jquery.smooth-scroll.js',
-        './js/jquery.waypoints.js',
-        './js/waypoints.sticky.js',
-        //'./js/waypoints.debug.js',
-        //'./js/jquery.tooltipster.js',
-        './js/jquery.magnific-popup.min.js',
-        //'./js/mediaelement-and-player.js',
-        './js/enquire.min.js',
         './js/scripts.js'
         ],
         dest: '../js/scripts.js'
