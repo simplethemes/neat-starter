@@ -85,7 +85,7 @@ module.exports = function (grunt) {
         //  'bower_components/formstone/dist/js/tooltip.js',
         'js/main.js'
         ],
-        dest: 'js/scripts.js'
+        dest: 'js/scripts.all.js'
       },
       //css: {
       //  src: 'src/css/*.css',
@@ -105,7 +105,7 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          'js/scripts.min.js': ['js/scripts.js']
+          'js/scripts.min.js': ['js/scripts.all.js']
         }
       }
     },
