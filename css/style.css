@@ -407,32 +407,32 @@ body {
 /* @group Typography */
 /* line 75, ../sass/style.scss */
 h1 {
-  font-size: 2.875em;
+  font-size: 2.5em;
 }
 
 /* line 78, ../sass/style.scss */
 h2 {
-  font-size: 2.375em;
+  font-size: 1.75em;
 }
 
 /* line 81, ../sass/style.scss */
 h3 {
-  font-size: 1.875em;
+  font-size: 1.25em;
 }
 
 /* line 84, ../sass/style.scss */
 h4 {
-  font-size: 1.625em;
+  font-size: 1em;
 }
 
 /* line 87, ../sass/style.scss */
 h5 {
-  font-size: 1.25em;
+  font-size: 0.85em;
 }
 
 /* line 90, ../sass/style.scss */
 h6 {
-  font-size: 1.125em;
+  font-size: 0.75em;
 }
 
 /* line 94, ../sass/style.scss */
