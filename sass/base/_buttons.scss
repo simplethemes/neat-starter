@@ -21,6 +21,8 @@ button {
   &:hover,
   &:focus {
     background-color: darken($action-color, 15%);
+    outline: inherit;
+    outline-color: transparent;
     color: #fff;
   }
 
