@@ -53,3 +53,16 @@ picture {
   margin: 0;
   max-width: 100%;
 }
+
+ul.list,ol.list {
+  margin-left: em(20);
+  list-style-position: inside;
+  list-style-type: disc;
+}
+ol.list {
+  list-style-type: decimal;
+  li ul {
+    list-style-type: lower-alpha;
+    margin-left: em(20);
+  }
+}
