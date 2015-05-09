@@ -25,14 +25,15 @@ module.exports = function (grunt) {
 
     tag: {
       banner: '/*!\n' +
-              ' * <%= pkg.name %>\n' +
-              ' * <%= pkg.title %>\n' +
-              ' * <%= pkg.url %>\n' +
-              ' * @author <%= pkg.author %>\n' +
-              ' * @version <%= pkg.version %>\n' +
-              ' * Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
+              'Theme Name: <%= pkg.name %>\n' +
+              'Theme URI: <%= pkg.url %>\n' +
+              'Author: <%= pkg.author %>\n' +
+              'Version <%= pkg.version %>\n' +
+              'Text Domain: <%= pkg.textdomain %>\n' +
+              'Copyright <%= pkg.copyright %>. <%= pkg.license %> licensed.\n' +
               ' */\n'
     },
+
 
     /**
      * Set project info
@@ -41,10 +42,20 @@ module.exports = function (grunt) {
       src: './'
     },
     sass: {
-        dist: {
+        dev: {
             options: {
                 style: 'expanded', //nested, compact, compressed, expanded
                 lineNumbers: true,
+                banner: '<%= tag.banner %>'
+            },
+            files: {
+                'css/style.css': 'sass/style.scss'
+            }
+        },
+        dist: {
+            options: {
+                style: 'compressed', //nested, compact, compressed, expanded
+                lineNumbers: false,
                 banner: '<%= tag.banner %>'
             },
             files: {
@@ -60,10 +71,21 @@ module.exports = function (grunt) {
 
     concat: {
       dev: {
+        //array of scripts to minify and include
         src: [
-        './js/scripts.js'
+        //  'bower_components/formstone/dist/js/core.js',
+        //  'bower_components/formstone/dist/js/mediaquery.js',
+        //  'bower_components/formstone/dist/js/touch.js',
+        //  'bower_components/formstone/dist/js/swap.js',
+        //  'bower_components/formstone/dist/js/navigation.js',
+        //  'bower_components/formstone/dist/js/equalize.js',
+        //  'bower_components/formstone/dist/js/transition.js',
+        //  'bower_components/formstone/dist/js/background.js',
+        //  'bower_components/formstone/dist/js/carousel.js',
+        //  'bower_components/formstone/dist/js/tooltip.js',
+        'js/main.js'
         ],
-        dest: '../js/scripts.js'
+        dest: 'js/scripts.js'
       },
       //css: {
       //  src: 'src/css/*.css',
@@ -83,7 +105,7 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          '../js/scripts.min.js': ['../js/scripts.js']
+          'js/scripts.min.js': ['js/scripts.js']
         }
       }
     },
@@ -98,21 +120,21 @@ module.exports = function (grunt) {
         options: {
           spawn: false,
         },
-        files: './sass/{,*/}*.scss',
-        tasks: ['sass:dist'],
+        files: 'sass/{,*/}*.scss',
+        tasks: ['sass:dev'],
       },
       concat: {
         options: {
           spawn: false,
         },
-        files: './js/{,*/}*.js',
+        files: 'js/{,*/}*.js',
         tasks: ['concat:dev'],
       },
       uglify: {
         options: {
           spawn: false,
         },
-        files: './js/{,*/}*.js',
+        files: 'js/{,*/}*.js',
         tasks: ['uglify:dev'],
       },
       livereload: {
@@ -157,7 +179,7 @@ module.exports = function (grunt) {
   */
 
 grunt.registerTask('build', [
-  'compass:dist',
+  'sass:dist',
   'concat:dev',
   'uglify:dev',
 ]);
@@ -165,6 +187,11 @@ grunt.registerTask('build', [
 grunt.registerTask('js', [
   'concat:dev',
   'uglify:dev',
+]);
+
+
+grunt.registerTask('css', [
+  'sass:dist',
 ]);
 
 };
