@@ -73,17 +73,17 @@ module.exports = function (grunt) {
       dev: {
         //array of scripts to minify and include
         src: [
-        //  'bower_components/formstone/dist/js/core.js',
-        //  'bower_components/formstone/dist/js/mediaquery.js',
-        //  'bower_components/formstone/dist/js/touch.js',
-        //  'bower_components/formstone/dist/js/swap.js',
-        //  'bower_components/formstone/dist/js/navigation.js',
-        //  'bower_components/formstone/dist/js/equalize.js',
-        //  'bower_components/formstone/dist/js/transition.js',
-        //  'bower_components/formstone/dist/js/background.js',
-        //  'bower_components/formstone/dist/js/carousel.js',
-        //  'bower_components/formstone/dist/js/tooltip.js',
-        'js/main.js'
+        //'bower_components/formstone/dist/js/core.js',
+        //'bower_components/formstone/dist/js/mediaquery.js',
+        //'bower_components/formstone/dist/js/touch.js',
+        //'bower_components/formstone/dist/js/swap.js',
+        //'bower_components/formstone/dist/js/navigation.js',
+        //'bower_components/formstone/dist/js/equalize.js',
+        //'bower_components/formstone/dist/js/transition.js',
+        //'bower_components/formstone/dist/js/background.js',
+        //'bower_components/formstone/dist/js/carousel.js',
+        //'bower_components/formstone/dist/js/tooltip.js',
+        'js/src/main.js'
         ],
         dest: 'js/scripts.all.js'
       },
@@ -127,14 +127,14 @@ module.exports = function (grunt) {
         options: {
           spawn: false,
         },
-        files: 'js/{,*/}*.js',
+        files: 'js/src/{,*/}*.js',
         tasks: ['concat:dev'],
       },
       uglify: {
         options: {
           spawn: false,
         },
-        files: 'js/{,*/}*.js',
+        files: 'js/src/{,*/}*.js',
         tasks: ['uglify:dev'],
       },
       livereload: {
