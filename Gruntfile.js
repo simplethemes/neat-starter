@@ -49,7 +49,7 @@ module.exports = function (grunt) {
                 banner: '<%= tag.banner %>'
             },
             files: {
-                'css/style.css': 'sass/style.scss'
+                'style.css': 'sass/style.scss'
             }
         },
         dist: {
@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                 banner: '<%= tag.banner %>'
             },
             files: {
-                'css/style.css': 'sass/style.scss'
+                'style.css': 'sass/style.scss'
             }
         }
     },
@@ -70,7 +70,7 @@ module.exports = function (grunt) {
      */
 
     concat: {
-      dev: {
+      dist: {
         //array of scripts to minify and include
         src: [
         //'bower_components/formstone/dist/js/core.js',
@@ -99,7 +99,7 @@ module.exports = function (grunt) {
       options: {
         mangle: false
       },
-      dev: {
+      dist: {
         files: {
           'js/scripts.min.js': ['js/scripts.all.js']
         }
@@ -138,7 +138,7 @@ module.exports = function (grunt) {
           spawn: false,
           livereload: true,
         },
-        files: ['css/style.css','js/scripts.min.js','images/**','index.html'],
+        files: ['style.css','js/scripts.min.js','images/**','index.html'],
       }
     },
     // loader
@@ -176,13 +176,13 @@ module.exports = function (grunt) {
 
 grunt.registerTask('build', [
   'sass:dist',
-  'concat:dev',
-  'uglify:dev',
+  'concat:dist',
+  'uglify:dist',
 ]);
 
 grunt.registerTask('js', [
-  'concat:dev',
-  'uglify:dev',
+  'concat:dist',
+  'uglify:dist',
 ]);
 
 
