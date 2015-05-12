@@ -86,11 +86,7 @@ module.exports = function (grunt) {
         'js/src/main.js'
         ],
         dest: 'js/scripts.all.js'
-      },
-      //css: {
-      //  src: 'src/css/*.css',
-      //  dest: 'dest/css/concat.css'
-      //}
+      }
     },
 
 
